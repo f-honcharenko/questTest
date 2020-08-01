@@ -4,8 +4,7 @@
   "description": "italent ptoject",
   "main": "server.js",
   "scripts": {
-    "server-dev-start": "nodemon server.js",
-    "TTping": "console.log('pong');"
+    "server-dev-start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
