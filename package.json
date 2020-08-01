@@ -1,0 +1,42 @@
+{
+  "name": "questtest.com",
+  "version": "1.0.0",
+  "description": "italent ptoject",
+  "main": "server.js",
+  "scripts": {
+    "server-dev-start": "nodemon server.js",
+    "TTping": "console.log('pong');"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f-honcharenko/questTest.git"
+  },
+  "keywords": [
+    "italent",
+    "test",
+    "quest",
+    "qr",
+    "codes"
+  ],
+  "author": "Filipp Honcharenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/f-honcharenko/questTest/issues"
+  },
+  "homepage": "https://github.com/f-honcharenko/questTest#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bcrypt": "^5.0.0",
+    "config": "^3.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.27",
+    "vue": "^2.6.11",
+    "vue-cli": "^2.9.6",
+    "vue-router": "^3.3.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
