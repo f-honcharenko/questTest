@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
+import store from './store';
 
 import landing from './components/Landing'
 import login from './components/Login'
@@ -13,22 +14,55 @@ Vue.config.productionTip = false
 
 Vue.use(VueRouter);
 
-const routes = [
-  { path: '/', component: landing },
-  { path: '/error', component: error },
-  { path: '/signup', component: signup },
-  { path: '/login', component: login },
-  { path: '/lk', component:lk },
+const routes = [{
+    path: '/',
+  component: landing,
+  login: true
+    
+  },
+  {
+    path: '/error',
+    component: error,
+    login: false
+  },
+  {
+    path: '/signup',
+    component: signup,
+    login: false
+  },
+  {
+    path: '/login',
+    component: login,
+    login: false
+
+  },
+  {
+    path: '/lk',
+    name:'lk',
+    component: lk,
+    login: true
+  },
 ];
 
 const router = new VueRouter({
-  mode:'history',
+  mode: 'history',
   routes
+});
+
+router.beforeEach((from, to, next) => {
+  // console.log(to);
+  // if (!to.login) {
+  //   alert('FALSE');
+  // } else {
+    next();
+
+  // }
 });
 
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => {
     return h(App)
   }

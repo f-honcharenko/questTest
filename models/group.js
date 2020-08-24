@@ -11,7 +11,7 @@ const userSchema = new Schema(
             type: Array,
             required: false,
         },
-        name: {
+        groupName: {
             type: String,
             required: true,
         },

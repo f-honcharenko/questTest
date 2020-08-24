@@ -36,11 +36,12 @@ export default {
         email: this.email,
         password: this.password,
       };
-      console.log(candidate);
       axios.post("http://" + document.domain + ":5000/login", candidate).then(
         (res) => {
           if (res.status == 200) {
             localStorage["token"] = res.data.token;
+            this.$store.commit("auth_success", res.data.token);
+            this.$store.commit("auth_success_userWrite", res.data.user);
             this.$router.push("/");
           }
           alert(res.data.title);
