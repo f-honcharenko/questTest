@@ -2,5 +2,11 @@
     "express":{
         "port":5000,
         "ip":"localhost"
+    },
+    "bcrypt":{
+        "salt":5
+    },
+    "mongoose":{
+        "link": "mongodb+srv://admin:admin@cluster0.albqm.mongodb.net/Cluster0?retryWrites=true&w=majority"
     }
 }
