@@ -8,5 +8,8 @@
     },
     "mongoose":{
         "link": "mongodb+srv://admin:admin@cluster0.albqm.mongodb.net/Cluster0?retryWrites=true&w=majority"
+    },
+    "jwt":{
+        "secret": "testJWTsecret"
     }
 }

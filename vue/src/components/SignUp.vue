@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>REGISTER</h1>
     <div class="ui equal width form">
       <div class="fields">
         <div class="field">

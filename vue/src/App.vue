@@ -1,5 +1,6 @@
 <template>
   <div>
+    <i>Dev tool-links:</i> <br/>
       <router-link to="/" exact>Landing</router-link><br/>
       <router-link to="/login">Login</router-link><br/>
       <router-link to="/signup">SignUp</router-link><br/>

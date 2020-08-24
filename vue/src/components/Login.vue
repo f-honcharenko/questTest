@@ -1,14 +1,57 @@
 <template>
   <div>
-   Login
+    <h1>LOGIN</h1>
+    <div class="ui equal width form">
+      <div class="fields">
+        <div class="field">
+          <label>Email</label>
+          <input type="text" v-model="email" placeholder="Email" />
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input type="password" v-model="password" />
+        </div>
+      </div>
+      <button v-on:click="LoginButton">send this</button>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  name: 'Login',
+  name: "Login",
   props: {
-    msg: String
-  }
-}
+    msg: String,
+  },
+  data: () => {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    LoginButton() {
+      const candidate = {
+        email: this.email,
+        password: this.password,
+      };
+      console.log(candidate);
+      axios.post("http://" + document.domain + ":5000/login", candidate).then(
+        (res) => {
+          if (res.status == 200) {
+            localStorage["token"] = res.data.token;
+            this.$router.push("/");
+          }
+          alert(res.data.title);
+          console.log(res);
+        },
+        (err) => {
+          console.log(err.response);
+          alert(err.response.data.message);
+        }
+      );
+    },
+  },
+};
 </script>
